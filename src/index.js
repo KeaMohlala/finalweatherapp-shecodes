@@ -115,4 +115,4 @@ newTempF.addEventListener("click", changeFarenheitTemp);
 
 let celciusTemperature = null;
 
-getCurrentPosition();
+//getCurrentPosition();
