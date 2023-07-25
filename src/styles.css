@@ -1,0 +1,43 @@
+.border {
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
+  background: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+  border-radius: 30px;
+  font-family: "Sancreek", cursive;
+}
+.city {
+  color: #ff6473;
+}
+
+.forecast {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  background-image: var(--bs-gradient);
+  background: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+}
+.search-form {
+  margin-bottom: 20px;
+}
+.container {
+  margin: 30px, auto;
+  padding: 30px;
+  max-width: 900px;
+}
+.humidity {
+  margin-left: -30px;
+  margin-right: 10px;
+}
+.description {
+  text-transform: capitalize;
+}
+
+.units a {
+  text-decoration: none;
+  color: #ff6473;
+  cursor: default;
+}
+.units a:hover {
+  text-decoration: underline;
+  cursor: default;
+}
