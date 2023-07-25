@@ -62,34 +62,34 @@ function citySearch(event) {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", citySearch);
 
-function getCurrentPosition() {
-  navigator.geolocation.getCurrentPosition(showPosition);
-}
+//function getCurrentPosition() {
+//navigator.geolocation.getCurrentPosition(showPosition);
+//}
 
-function showPosition(position) {
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
-  let apiKey = "96ad27349a64ea1dcdfbe6f4d458c085";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
-  axios.get(apiUrl).then(currentCityTemperature);
-}
+//function showPosition(position) {
+//let lat = position.coords.latitude;
+//let lon = position.coords.longitude;
+//let apiKey = "96ad27349a64ea1dcdfbe6f4d458c085";
+//let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+//axios.get(apiUrl).then(currentCityTemperature);
+//}
 
-function currentCityTemperature(response) {
-  let currentCity = document.querySelector("#cities");
-  currentCity.innerHTML = response.data.name;
-  let searchedCityTemp = Math.round(response.data.main.temp);
-  // let searchedCityTempCelcius = `${searchedCityTemp}°C`;
-  let displayCityTemp = document.querySelector("#temp");
-  displayCityTemp.innerHTML = searchedCityTemp;
-}
+//function currentCityTemperature(response) {
+//let currentCity = document.querySelector("#cities");
+//currentCity.innerHTML = response.data.name;
+//let searchedCityTemp = Math.round(response.data.main.temp);
+// let searchedCityTempCelcius = `${searchedCityTemp}°C`;
+//let displayCityTemp = document.querySelector("#temp");
+//displayCityTemp.innerHTML = searchedCityTemp;
+//}
 
-function currentCitySearch(event) {
-  event.preventDefault();
-  let searchCurrentCity = document.querySelector("#current-location");
-  searchCity(searchCurrentCity.value);
-}
-let button = document.querySelector("button");
-button.addEventListener("click", currentCitySearch);
+//function currentCitySearch(event) {
+//event.preventDefault();
+//let searchCurrentCity = document.querySelector("#current-location");
+// searchCity(searchCurrentCity.value);
+//}
+//let button = document.querySelector("button");
+//button.addEventListener("click", currentCitySearch);
 
 function changeCelciusTemp(event) {
   event.preventDefault();
