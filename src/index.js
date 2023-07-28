@@ -24,6 +24,39 @@ function formatDate(currentDate) {
 }
 formatDate();
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Friday", "Saturday", "Sunday", "Monday", "Tuesday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="row">
+          <div class="col-12">
+            <div class="forecast-date">${day}</div>
+              <div class="weather-forecast">
+                <span class="weather-forecast-min"> 12°C </span>
+                |
+                <span class="weather-forecast-max"> 35°C </span>
+                <span class="weather-forecast-icon">
+                  <img
+                    src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png"
+                    alt="clear"
+                    id="weather-forecast-icon"
+                    width="42"
+                  />
+                </span>
+              </div>
+              </div>
+          </div>
+          </div>
+        </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function searchCity(city) {
   let apiKey = "96ad27349a64ea1dcdfbe6f4d458c085";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -62,6 +95,7 @@ function citySearch(event) {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", citySearch);
 
+displayForecast();
 //function getCurrentPosition() {
 //navigator.geolocation.getCurrentPosition(showPosition);
 //}
