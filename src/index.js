@@ -55,6 +55,7 @@ function showTemperature(response) {
   );
   icon.setAttribute("alt", response.data.weather[0].description);
   celciusTemperature = response.data.main.temp;
+  getForecast(response.data.coord);
 }
 function citySearch(event) {
   event.preventDefault();
@@ -148,8 +149,6 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-
-getForecast(response.data.coord);
 
 //function getCurrentPosition() {
 //navigator.geolocation.getCurrentPosition(showPosition);
